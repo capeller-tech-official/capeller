@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+  <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-widthh,initial-scale=1.0">
+  <title>Capeller Medicare</title>
+
+  <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    body{
+        background:#f4f8fb;
+        color:#183047;
+    }
+    header{
+        background:#073b4c;
+        color:white;
+        padding:20px 8%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    header h2{
+        color:#55d6be;
+    }
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+    }
+    hero{
+      padding: 90px 8%;
+      background:linear-gradient(120deg,#073b4c,#118ab2);
+      color:white;
+      text-align:center;
+    }
+    .hero h1{
+        font: size 42px;
+        margin-bottom:25px;
+    }
+    button{
+        background:#06d6a0;
+        color:#073b4c;
+        border:none;
+        padding:13px 25px;
+        border-radius:6px;
+        cursor:pointer;
+        font-weight:bold;
+    }
+    section{
+        padding:60px 8%;
+    }
+    section h2{
+        text-align:center;
+        margin-bottom:30px;
+    }
+    .services,doctors{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(220px, 1fr));
+        gap:20px;
+    }
+     card{
+        background:white;
+        padding:25px;
+        border-radius:10px;
+        text-align: center;
+        box-shadow:0 3px 12px #00000010;
+    }
+    .card h3{
+        color:#118ab2;
+        margin-bottom:12px;
+    }
+    form{
+        max-width:500px;
+        margin:auto;
+        display:grid;
+        gap:15px;
+    }
+    input,select,textarea{
+        padding:13px
+        borderolid #ccc;
+        border-radius:6px;
+        width:100px
+    }
+    footer{
+      background:#073b4c;
+      color:white;
+      text-align:center;
+      padding:25px;  
+    }
+    @media(max-width:600px) {
+     header{
+        flex-direction:column;
+        gap:15px;
+     }
+     nav a {
+        margin:7px;
+     }
+     .hero h1{
+        font-size:30px;
+     }
+    }
+    </style>
+ </head>
+
+ <body>
+
+    <header>
+       <h2>CAPELLER MEDICARE</h2>
+
+       <nav>
+         <a href="#home">Home</a>
+         <a href="#services">services</a>
+         <a href="#doctors">Doctors</a>
+         <a href="#appointment">Appointment</a>
+       </nav>
+    </header>
+
+    <section class="hero" id="home">
+       <h1>Your Health, our priority</h1>
+
+       <p>Welcome to capeller medicare-a demomstration of a modern telemedicine website.</p>
+
+       <button onclick="bookAppointment()"Book an appointment</button>
+    </section
+
+    <section id="services">
+      <h2>our services</h2>
+
+      <div class="services">
+        <div class="card">
+           <h3>online consultation</h3>
+           <p>learn how patients could connet with healthcare professionals online.</p>
+           </div>
+
+           <div class="card">
+              <h3>Health education</h3>
+              <p>Access useful general health information and educational resource.</p>
+        </div>
+
+        <div class="card">
+          <h3>Appointment Booking</h3>
+          <p>Explore a simple way to request an appointment.</p>
+      </div>
+   </div>
+ </section>
+
+ <section id="doctors">
+   <h2>sample Healthcare Profile</h2>
+
+   <div class="doctors">
+     <div class="card">
+       <h3>sample profile 1</h3>
+       <p>General Healthcare</p>
+       <p>Demonstration profile only</p>
+     </div>
+
+     <div class="card">
+       <h3>sample profile 3</h3>
+       <p>Heart Health</p>
+       <p>Demonstrate profile only</p>
+    </div>
+ </div>
+</section>
+
+<section class="appointment"id="appointment">
+   <h2>Request an Appointment</h2>
+
+   <form id="appointmentform">
+
+   <input type="text" placeholder="Your Name" required>
+
+   <input type="email" placeholder="Your Email" required>
+
+   <select required>
+      <option value="">Choose a service</option>
+      <option>General Consultation</option>
+      <option>Child Health Education</option>
+      <option>Health Education</option>
+   </select>
+
+   <input type="date"id="date" required>
+
+   <textarea placeholder="Additional message (optional)"></textarea>
+
+   <button type="submit">Submit Request</button>
+
+  </form>
+</section>
+
+<footer>
+  <p>@<span id="year"></span>Capeller Medicare.Learning project.</p>
+  <p>WORK HARD, DREAM BIG.</p>
+  <p>This is a demo not a real Medicare service.</p>
+</footer>
+
+<script>
+  function bookAppointment() {
+    document.getElementById("appointment").scrollIntoView({
+      behavior:"smooth"  
+    });
+  }
+
+  document.getElementByIld("year").textContent=
+    new Date().getFULLYear();
+
+  document.getElementById("date").min=
+    new Date().toISOString().split("T")[0];
+
+document.getElementById("appointmentForm.").addEventlisten("submit",
+function(event) {
+    event.preventDefault();
+
+    alert("Your demo appointment request has been received!");
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
+
